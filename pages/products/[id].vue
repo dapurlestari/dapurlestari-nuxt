@@ -10,6 +10,15 @@
         throw createError({statusCode: 404, statusMessage: 'Product not found!'})
     }
     const product = data.value.data
+    const seo = product.attributes.seo
+
+    useHead({
+      title: seo.metaTitle,
+      meta: [
+        {name: 'description', content: seo.metaDescription},
+        {name: 'keywords', content: seo.keywords},
+      ],
+    })
 
     definePageMeta({
         layout: 'products'

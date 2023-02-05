@@ -20,6 +20,13 @@
     const {data: response} = await useFetch('https://panel.dapurlestari.id/api/products/?populate=*')
     const products = response.value.data
     console.log(products);
+    useHead({
+      title: 'Dapur Lestari | Products',
+      meta: [
+        {name: 'description', content: 'Dapur Lestari Products'},
+        {name: 'keywords', content: 'dapur, lestari, produk, kukis'},
+      ],
+    })
 </script>
 
 <style scoped>
