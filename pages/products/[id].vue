@@ -4,7 +4,7 @@
 
 <script setup>
     const { id } = useRoute().params
-    const { data, error } = await useFetch('https://panel.dapurlestari.id/api/products/find-by-slug/' + id + '/?populate=*')
+    const { data, error } = await useFetch('/api/products/' + id)
     // console.log(data == null);
     if (error.value) {
         throw createError({statusCode: 404, statusMessage: 'Product not found!'})
