@@ -2,17 +2,14 @@
     <div>
         <h2>About</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, eveniet?</p>
-        <!-- <p>{{ data.message }}</p> -->
-        <ul>
-            <li v-for="file in files">{{ file.name }}</li>
-        </ul>
+        <p>{{ config }}</p>
     </div>
 </template>
 
 <script setup>
-    const { data } = await useFetch('/api/getFiles')
+    const { data } = await useFetch('/api/config/get')
     console.log(data.value)
-    const files = data.value
+    const config = data.value.data
 </script>
 
 <style scoped>

@@ -17,7 +17,7 @@
         layout: 'products'
     })
 
-    const {data: response} = await useFetch('https://panel.dapurlestari.id/api/products/?populate=*')
+    const {data: response} = await useFetch('/api/products/get')
     const products = response.value.data
     console.log(products);
     useHead({
