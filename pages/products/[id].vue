@@ -3,6 +3,10 @@
 </template>
 
 <script setup>
+    definePageMeta({
+        layout: 'scaffold'
+    })
+    
     const { id } = useRoute().params
     const { data, error } = await useFetch('/api/products/' + id)
     // console.log(data == null);
@@ -19,10 +23,6 @@
         {name: 'keywords', content: seo.keywords},
       ],
     })
-
-    /* definePageMeta({
-        layout: 'products'
-    }) */
 </script>
 
 <style scoped>
