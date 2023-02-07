@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       title: 'Dapur Lestari',
       meta: [
         {name: 'description', content: 'Dapur Lestari cookies'}
-      ]
+      ],
     },
   },
   runtimeConfig: {

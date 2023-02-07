@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
-        "Nuxt"
+        "Nuxt",
+        "oldrose"
     ],
     "files.associations": { 
         "*.scss": "postcss",

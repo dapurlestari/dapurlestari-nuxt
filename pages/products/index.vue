@@ -13,9 +13,9 @@
 </template>
 
 <script setup>
-    definePageMeta({
+    /* definePageMeta({
         layout: 'products'
-    })
+    }) */
 
     const {data: response} = await useFetch('/api/products/get')
     const products = response.value.data
