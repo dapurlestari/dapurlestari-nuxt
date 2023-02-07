@@ -34,7 +34,12 @@
             </div>
         </div>
         
-        <img src="~assets/image/1656569137_0-illustration_svg.svg" alt="">
+        <section class="flex-none">
+            <div class="p-5">
+                <h3>Dapur Lestari</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, necessitatibus.</p>
+            </div>
+        </section>
     </div>
 </template>
 
