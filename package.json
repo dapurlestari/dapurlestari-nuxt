@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "0.9.67",
-    "daisyui": "^2.50.0"
+    "daisyui": "^2.50.0",
+    "vue-gtag-next": "^1.14.0"
   }
 }
