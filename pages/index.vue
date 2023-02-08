@@ -27,8 +27,8 @@
             <div class="hero-overlay bg-opacity-60"></div>
             <div class="hero-content text-center text-neutral-content">
                 <div class="max-w-md">
-                    <img :src="$logo" alt="" class="w-20 sm:w-32 md:w-32 pb-4 inline-block">
-                    <p class="mb-5">{{ firstSlideshow.subtitle }}</p>
+                    <img :src="$logo" alt="" class="w-20 sm:w-36 md:w-36 mb-4 inline-block bg-white p-7 mask mask-circle">
+                    <p class="mb-5 text-white">{{ firstSlideshow.subtitle }}</p>
                     <button type="button" class="btn bg-secondary-500 hover:bg-secondary-600 text-white">Beli Yuk!</button>
                 </div>
             </div>
@@ -37,14 +37,14 @@
         <section class="flex-none">
             <div class="p-5">
                 <h3>{{ firstSlideshow.title }}</h3>
-                <p>{{ firstSlideshow.subtitle }}</p>
+                <p>{{ $myConfig.description }}</p>
             </div>
         </section>
     </div>
 </template>
 
 <script setup>
-    const { $logo } = useNuxtApp()
+    const { $myConfig, $logo } = useNuxtApp()
     const { data } = await useFetch('/api/pages/home')
 
     const config = useRuntimeConfig()
