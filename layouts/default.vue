@@ -2,6 +2,8 @@
     <div>
         <slot />
 
+        <FooterSection />
+
         <BottomNav />
 
         <div class="pb-14"></div>
