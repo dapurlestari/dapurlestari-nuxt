@@ -144,28 +144,28 @@
         <!-- marquee by https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind/ -->
         <section class="flex justify-center mt-32">
             <div class="text-slate-900 text-center justify-center">
-                <h2 class="font-bold text-3xl text-primary-500">{{ testimonial.title }}</h2>
-                <p class="font-light tracking-wide text-xl my-3 mx-auto max-w-3xl font-serif">
+                <h2 class="font-bold text-2xl text-primary-500">{{ testimonial.title }}</h2>
+                <p class="font-light tracking-wide text-xl my-3 mx-auto max-w-2xl font-serif px-5">
                     {{ testimonial.subtitle }}
                 </p>
 
-                <article id="company-logo" class="flex overflow-hidden whitespace-nowrap">
+                <article id="company-logo" class="flex overflow-hidden whitespace-nowrap mt-10">
                     <div class="relative">
                         <ul class="marquee flex list-none pl-0">
-                            <li>Item 0</li>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                            <li>Item 4</li>
-                            <li>Item 5</li>
+                            <li>Logo 0</li>
+                            <li>Logo 1</li>
+                            <li>Logo 2</li>
+                            <li>Logo 3</li>
+                            <li>Logo 4</li>
+                            <li>Logo 5</li>
                         </ul>
                         <ul class="marquee2 flex list-none pl-0 absolute top-0">
-                            <li>Item 0</li>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                            <li>Item 4</li>
-                            <li>Item 5</li>
+                            <li>Logo 0</li>
+                            <li>Logo 1</li>
+                            <li>Logo 2</li>
+                            <li>Logo 3</li>
+                            <li>Logo 4</li>
+                            <li>Logo 5</li>
                         </ul>
                     </div>
                 </article>
