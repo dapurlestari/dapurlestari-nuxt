@@ -12,8 +12,9 @@
         </div>
         <slot />
         
+        <FooterSection />
+        
         <BottomNav />
-
     </div>
 </template>
 
