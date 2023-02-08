@@ -2,9 +2,9 @@
     <div>
         <footer class="footer footer-center p-10 bg-gray-100 text-base-content rounded">
             <div class="grid grid-flow-col gap-4">
-                <a class="link link-hover">About Us</a> 
+                <!-- <a class="link link-hover">About Us</a> 
                 <a class="link link-hover">Contact</a> 
-                <a class="link link-hover">Career</a> 
+                <a class="link link-hover">Career</a>  -->
                 <a class="link link-hover">Privacy Policy</a>
                 <a class="link link-hover">Terms of Use</a>
             </div> 
@@ -16,7 +16,7 @@
                 </div>
             </div> 
             <div>
-                <p>{{ $myConfig.copyright }}</p>
+                <p class="text-sm">{{ $myConfig.copyright }}</p>
             </div>
         </footer>
     </div>

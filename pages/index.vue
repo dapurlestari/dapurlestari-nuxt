@@ -172,9 +172,7 @@
             </div>
         </section>
 
-        <!-- <ContactSection /> -->
-
-        <section class="flex justify-center mt-20"></section>
+        <ContactSection />
     </div>
 </template>
 
