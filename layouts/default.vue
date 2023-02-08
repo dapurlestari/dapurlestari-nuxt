@@ -3,6 +3,8 @@
         <slot />
 
         <BottomNav />
+
+        <div class="pb-14"></div>
     </div>
 </template>
 

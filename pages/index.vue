@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="navbar bg-base-100">
+        <!-- <div class="navbar bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -21,29 +21,39 @@
                     <li><NuxtLink to="/about">Tentang Kami</NuxtLink></li>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
-        <div class="hero min-h-screen" style="background-image: url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg);">
+        <div class="hero min-h-screen" :style="{'background-image': 'url('+firstSlideshowURL+')'}">
             <div class="hero-overlay bg-opacity-60"></div>
             <div class="hero-content text-center text-neutral-content">
                 <div class="max-w-md">
-                <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-                <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                <button class="btn btn-primary">Get Started</button>
+                    <img :src="$logo" alt="" class="w-20 sm:w-32 md:w-32 pb-4 inline-block">
+                    <p class="mb-5">{{ firstSlideshow.subtitle }}</p>
+                    <button type="button" class="btn bg-secondary-500 hover:bg-secondary-600 text-white">Beli Yuk!</button>
                 </div>
             </div>
         </div>
         
         <section class="flex-none">
             <div class="p-5">
-                <h3>Dapur Lestari</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, necessitatibus.</p>
+                <h3>{{ firstSlideshow.title }}</h3>
+                <p>{{ firstSlideshow.subtitle }}</p>
             </div>
         </section>
     </div>
 </template>
 
 <script setup>
+    const { $logo } = useNuxtApp()
+    const { data } = await useFetch('/api/pages/home')
+
+    const config = useRuntimeConfig()
+    console.log(data.value)
+    const homeData = data.value.data
+    const firstSlideshow = homeData.attributes.slideshows[0]
+    const firstSlideshowURL = config.public.baseURL+firstSlideshow.image.data.attributes.url
+    console.log(firstSlideshowURL)
+    // const logo = config.public.baseURL+configData.attributes.logo.data.attributes.url
 </script>
 
 <style scoped>
