@@ -40,22 +40,22 @@
                 
                 <GMapMap
                     class="rounded-xl shadow-xl w-[340px] md:w-[660px] h-[450px] md:h-[420px] m-auto"
-                    :center="center"
-                    :zoom="15"
+                    :center="location"
+                    :zoom="map.zoom"
                     :options="{
-                        zoomControl: true,
-                        mapTypeControl: false,
-                        scaleControl: true,
-                        streetViewControl: false,
-                        rotateControl: false,
-                        fullscreenControl: false,
-                        draggable: false
+                        zoomControl: map.zoomControl,
+                        mapTypeControl: map.mapTypeControl,
+                        scaleControl: map.scaleControl,
+                        streetViewControl: map.streetViewControl,
+                        rotateControl: map.rotateControl,
+                        fullscreenControl: map.fullscreenControl,
+                        draggable: map.draggable
                     }">
 
                     <GMapMarker
                         :position="marker.position"
-                        :clickable="false"
-                        :draggable="false" />
+                        :clickable="marker.clickable"
+                        :draggable="marker.draggable" />
                 </GMapMap>
             </div>
         </div>
@@ -64,18 +64,26 @@
 
 <script setup>
     const { $myConfig } = useNuxtApp()
-    const config = useRuntimeConfig()
-    const mapAPIKey = config.public.mapAPIKey
+    // const config = useRuntimeConfig()
     const contact = {
         title: 'Segera hubungi kami!',
         subtitle: 'Punya pertanyaan?',
     }
 
-    const center = { lat: -7.412287, lng: 112.533737 };
+    const map = $myConfig.map
+    console.log(map);
+    const markers = map.markers
+    const defaultMarker = markers[0]
+    const location = {
+        lat: defaultMarker.latitude, 
+        lng: defaultMarker.longitude
+    };
 
     const marker = {
-            description: "Google France",
-            id: "1",
-            position: center,
-        }
+        description: defaultMarker.label,
+        id: `${defaultMarker.id}`,
+        position: location,
+        clickable: defaultMarker.clickable,
+        draggable: defaultMarker.draggable
+    }
 </script>
