@@ -36,12 +36,12 @@
         
         <section class="flex justify-center mt-20">
             <div class="container p-7 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-[18px] shadow-xl text-slate-900 text-center justify-center">
-                <h2 class="font-bold text-3xl text-slate-900">{{ recommendation.title }}</h2>
+                <h2 class="font-bold text-3xl text-primary-500">{{ recommendation.title }}</h2>
                 <p class="font-light tracking-wide text-xl my-3 mx-auto max-w-3xl font-serif">{{ recommendation.subtitle }}</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10 mx-0 md:mx-20">
                     <div v-for="item in homeData.recommendations" :key="item.id">
-                        <i :class="'lni '+item.icon+' text-4xl'"></i>
-                        <h3 class="font-bold text-primary-500 tracking-wide text-xl mt-3">{{ item.title }}</h3>
+                        <i :class="'lni '+item.icon+' text-4xl text-primary-500'"></i>
+                        <h3 class="font-bold text-secondary-500 tracking-wide text-xl mt-3">{{ item.title }}</h3>
                         <p class="font-light text-l">{{ item.subtitle }}</p>
                     </div>
                 </div>
