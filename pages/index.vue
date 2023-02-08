@@ -149,27 +149,30 @@
                     {{ testimonial.subtitle }}
                 </p>
 
-                <div class="relative flex overflow-x-hidden">
-                    <div class="py-12 animate-marquee whitespace-nowrap">
-                        <span class="text-4xl mx-4">Company Logo 1</span>
-                        <span class="text-4xl mx-4">Company Logo 2</span>
-                        <span class="text-4xl mx-4">Company Logo 3</span>
-                        <span class="text-4xl mx-4">Company Logo 4</span>
-                        <span class="text-4xl mx-4">Company Logo 5</span>
+                <article id="company-logo" class="flex overflow-hidden whitespace-nowrap">
+                    <div class="relative">
+                        <ul class="marquee flex list-none pl-0">
+                            <li>Item 0</li>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                            <li>Item 5</li>
+                        </ul>
+                        <ul class="marquee2 flex list-none pl-0 absolute top-0">
+                            <li>Item 0</li>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                            <li>Item 4</li>
+                            <li>Item 5</li>
+                        </ul>
                     </div>
-
-                    <div class="absolute top-0 py-12 animate-marquee2 whitespace-nowrap">
-                        <span class="text-4xl mx-4">Company Logo 1</span>
-                        <span class="text-4xl mx-4">Company Logo 2</span>
-                        <span class="text-4xl mx-4">Company Logo 3</span>
-                        <span class="text-4xl mx-4">Company Logo 4</span>
-                        <span class="text-4xl mx-4">Company Logo 5</span>
-                    </div>
-                </div>
+                </article>
             </div>
         </section>
 
-        <ContactSection />
+        <!-- <ContactSection /> -->
 
         <section class="flex justify-center mt-20"></section>
     </div>
@@ -180,7 +183,7 @@
     const { data } = await useFetch('/api/pages/home')
 
     const config = useRuntimeConfig()
-    console.log(data.value)
+    // console.log(data.value)
     const homeData = data.value.data.attributes
     const firstSlideshow = homeData.slideshows[0]
     const firstSlideshowURL = config.public.baseURL+firstSlideshow.image.data.attributes.url
@@ -195,5 +198,37 @@
         title: 'Apakah Kamu Selanjutnya?',
         subtitle: 'Ingin order banyak? Percayakan sajian kue anda dengan Dapur Lestari dan jadi salah satu di barisan ini'
     }
-    console.log(firstSlideshowURL)
+    // console.log(firstSlideshowURL)
 </script>
+
+<style scoped>
+    .marquee {
+        animation: marquee 5s linear infinite;
+    }
+
+    .marquee2 {
+        animation: marquee2 5s linear infinite;
+    }
+
+    #company-logo ul li {
+        margin: 8px;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes marquee2 {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0%);
+        }
+    }
+</style>

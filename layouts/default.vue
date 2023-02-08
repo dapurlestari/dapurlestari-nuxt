@@ -2,7 +2,7 @@
     <div>
         <slot />
 
-        <FooterSection />
+        <!-- <FooterSection /> -->
 
         <BottomNav />
 
