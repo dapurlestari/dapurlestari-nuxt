@@ -17,13 +17,8 @@
 </template>
 
 <script setup>
-    const { $myConfig, $logo, $formatPrice } = useNuxtApp()
     const { data } = await useFetch('/api/pages/home')
-
-    const config = useRuntimeConfig()
-    // console.log(data.value)
     const homeData = data.value.data.attributes
-    // console.log(firstSlideshowURL)
 </script>
 
 <style scoped>

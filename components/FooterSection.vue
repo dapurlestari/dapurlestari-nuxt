@@ -5,8 +5,8 @@
                 <!-- <a class="link link-hover">About Us</a> 
                 <a class="link link-hover">Contact</a> 
                 <a class="link link-hover">Career</a>  -->
-                <a class="link link-hover">Privacy Policy</a>
-                <a class="link link-hover">Terms of Use</a>
+                <NuxtLink to="/privacy-policy" class="link link-hover">Privacy Policy</NuxtLink>
+                <NuxtLink to="/terms-services" class="link link-hover">Terms and Services</NuxtLink>
             </div> 
             <div>
                 <div class="grid grid-flow-col gap-4">

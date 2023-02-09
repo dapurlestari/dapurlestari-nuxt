@@ -10,8 +10,8 @@
         layout: 'scaffold'
     })
 
-    const { data } = await useFetch('/api/pages/about')
-    const about = data.value.data.attributes
+    const { data } = await useFetch('/api/pages/termsServices')
+    const termsServices = data.value.data.attributes
 </script>
 
 <style scoped>
