@@ -11,10 +11,6 @@
             </div>
         </div>
         <slot />
-        
-        <FooterSection />
-        
-        <BottomNav />
     </div>
 </template>
 

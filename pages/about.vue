@@ -1,15 +1,15 @@
 <template>
-    <div>
-        <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, eveniet?</p>
-    </div>
+    <NuxtLayout name="scaffold">
+        <template #title>About</template>
+
+        <div>
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, eveniet?</p>
+        </div>
+    </NuxtLayout>
 </template>
 
 <script setup>
-    definePageMeta({
-        layout: 'scaffold'
-    })
-
     const { data } = await useFetch('/api/pages/about')
     const about = data.value.data.attributes
 </script>
