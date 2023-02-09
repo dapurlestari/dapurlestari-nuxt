@@ -7,15 +7,15 @@
             <section>
                 <div class="grid grid-rows-6 grid-flow-col gap-4 h-64">
                     <div class="row-span-6 col-span-3 bg-gray-200 rounded-lg">
-                        &nbsp;&nbsp;ads
+                        &nbsp;&nbsp;&nbsp;ads
                     </div>
                     
                     <div class="row-span-3 col-span-3 bg-gray-200 rounded-lg">
-                        &nbsp;&nbsp;ads
+                        &nbsp;&nbsp;&nbsp;ads
                     </div>
 
                     <div class="row-span-3 col-span-3 bg-gray-200 rounded-lg">
-                        &nbsp;&nbsp;ads
+                        &nbsp;&nbsp;&nbsp;ads
                     </div>
                 </div>
             </section>
