@@ -15,7 +15,7 @@
                     </a>
                 </div>
             </div> 
-            <div>
+            <div class="mb-12">
                 <p class="text-sm">{{ $myConfig.copyright }}</p>
             </div>
         </footer>
