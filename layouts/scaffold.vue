@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="navbar min-h-0 fixed z-50 bg-white shadow-lg">
+        <div class="navbar min-h-0 fixed z-50 bg-white shadow-md">
             <div class="navbar-start">
                 <button @click="router.back">
                     <i class="lni lni-chevron-left p-2"></i>
