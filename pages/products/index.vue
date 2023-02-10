@@ -5,17 +5,14 @@
         <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
 
             <section>
-                <div class="grid grid-rows-6 grid-flow-col gap-4 h-64">
-                    <div class="row-span-6 col-span-3 bg-gray-200 rounded-lg">
-                        &nbsp;&nbsp;&nbsp;ads
-                    </div>
-                    
-                    <div class="row-span-3 col-span-3 bg-gray-200 rounded-lg">
-                        &nbsp;&nbsp;&nbsp;ads
-                    </div>
-
-                    <div class="row-span-3 col-span-3 bg-gray-200 rounded-lg">
-                        &nbsp;&nbsp;&nbsp;ads
+                <h1 class="text-3xl font-bold text-gray-900">{{ productPage.contentful.title }}</h1>
+                <p class="text-black font-normal">{{ productPage.contentful.subtitle }}</p>
+                <div class="grid grid-rows-6 grid-flow-col gap-4 h-64 mt-6">
+                    <div v-for="banner in banners" :key="banner.id" :class="banner.style+' bg-gray-200 rounded-lg'">
+                        <img 
+                            :src="baseURL+banner.image.data.attributes.url" 
+                            :alt="banner.title" 
+                            class="h-full w-full object-cover object-center rounded-lg">
                     </div>
                 </div>
             </section>
@@ -71,9 +68,15 @@
 </template>
 
 <script setup>
-    const { $formatPrice } = useNuxtApp()
+    const { $formatPrice, $placeholderImageURL } = useNuxtApp()
     const config = useRuntimeConfig()
     const baseURL = config.public.baseURL
+    const defaultImage = $placeholderImageURL('Ads', 600, 450)
+
+    const {data: page} = await useFetch('/api/pages/product')
+    const productPage = page.value.data.attributes
+    const banners = productPage.ads_banners
+    console.log(banners)
 
     const {data: response} = await useFetch('/api/products/get')
     const products = response.value.data
