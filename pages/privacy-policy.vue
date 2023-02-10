@@ -5,7 +5,7 @@
         <div class="flex container mx-auto px-4 pt-16">
             <article class="prose lg:prose-xl">
                 <h2>{{ privacyPolicy.title }}</h2>
-                <div v-html="$mdit.render(privacyPolicy.content)" class="text-sm text-gray-700"></div>
+                <div v-html="$mdit.render(privacyPolicy.content)" class="text-sm text-gray-800"></div>
             </article>
         </div>
     </NuxtLayout>

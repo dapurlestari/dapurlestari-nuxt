@@ -234,8 +234,8 @@
                         <div class="space-y-6">
                             <!-- <p class="text-base text-gray-900">{{ product.attributes.description_rich }}</p> -->
                             
-                            <article class="prose lg:prose-xl">
-                                <div v-html="$mdit.render(product.attributes.description_rich)" class="text-sm text-gray-700"></div>
+                            <article v-if="product.attributes.description_rich" class="prose lg:prose-xl">
+                                <div v-html="$mdit.render(product.attributes.description_rich)" class="text-sm text-black"></div>
                             </article>
                         </div>
                     </div>
