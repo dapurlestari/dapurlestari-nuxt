@@ -1,12 +1,12 @@
 <template>
-    <ProductDetails :product="product" />
+    <NuxtLayout name="scaffold">
+        <template #title>Detail Produk</template>
+
+        <ProductDetails :product="product" />
+    </NuxtLayout>
 </template>
 
 <script setup>
-    definePageMeta({
-        layout: 'scaffold'
-    })
-    
     const { id } = useRoute().params
     const { data, error } = await useFetch('/api/products/' + id)
     // console.log(data == null);

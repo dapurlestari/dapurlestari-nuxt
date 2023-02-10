@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       '@fawmi/vue-google-maps', 
       '@googlemaps/markerclusterer',
       "fast-deep-equal",
-    ]
+    ],
   },
   app: {
     head: {
