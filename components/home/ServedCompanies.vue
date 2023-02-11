@@ -13,7 +13,7 @@
                             <li v-for="item in servedCompanies.companies">
                                 <img 
                                 :src="baseURL+item.logo.data.attributes.url" 
-                                :alt="item.logo.data.attributes.alternativeText"
+                                :alt="item.name"
                                 class="max-h-28 mr-2">
                             </li>
                         </ul>
@@ -21,7 +21,7 @@
                             <li v-for="item in servedCompanies.companies">
                                 <img 
                                 :src="baseURL+item.logo.data.attributes.url" 
-                                :alt="item.logo.data.attributes.alternativeText"
+                                :alt="item.name"
                                 class="max-h-28 mr-2">
                             </li>
                         </ul>

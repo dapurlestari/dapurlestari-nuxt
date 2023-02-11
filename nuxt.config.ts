@@ -13,6 +13,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
       title: 'Dapur Lestari',
       meta: [
         {name: 'description', content: 'Dapur Lestari cookies'}
