@@ -1,25 +1,25 @@
 <template>
-    <div>
-        
-        <HomeLandingHero :first-slideshow="homeData.slideshows[0]" />
+  <div>
+    <HomeLandingHero :first-slideshow="homeData.slideshows[0]" />
 
-        <HomeHotProducts :hot-products="homeData.hot_products"/>
-        
-        <HomeRecomSection :recommendations="homeData.recommendations" />
+    <HomeHotProducts :hot-products="homeData.hot_products" />
 
-        <HomeNewProducts :new-products="homeData.new_products" />
+    <HomeRecomSection
+      :recommendations="homeData.recommendations"
+      :recommendation="homeData.recommended_products" />
 
-        <!-- marquee by https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind/ -->
-        <HomeServedCompanies :served-companies="homeData.served_companies" />
+    <HomeNewProducts :new-products="homeData.new_products" />
 
-        <ContactSection />
-    </div>
+    <!-- marquee by https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind/ -->
+    <HomeServedCompanies :served-companies="homeData.served_companies" />
+
+    <ContactSection />
+  </div>
 </template>
 
 <script setup>
-    const { data } = await useFetch('/api/pages/home')
-    const homeData = data.value.data.attributes
+const { data } = await useFetch("/api/pages/home");
+const homeData = data.value.data.attributes;
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
