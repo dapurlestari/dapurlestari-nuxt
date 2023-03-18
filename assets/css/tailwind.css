@@ -13,7 +13,10 @@ body {
     .btn {
         @apply px-3 py-2 rounded-md text-sm;
     }
-    .btn.router-link-exact-active {
-        @apply bg-secondary-400 text-white rounded-md;
+    .btn.nav {
+      @apply bg-transparent border-none;
+    }
+    .btn.nav.router-link-exact-active {
+        @apply  text-secondary-500;
     }
 }

@@ -6,5 +6,6 @@
     "files.associations": { 
         "*.scss": "postcss",
         "*.css": "tailwindcss"
-    }
+    },
+    "editor.formatOnSave": true
 }

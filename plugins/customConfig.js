@@ -19,15 +19,25 @@ const markdownit = new mdit({
     typographer:  true,
     quotes: '“”‘’',
   })
-//   .use(sub)
-//   .use(sup)
-//   .use(fn)
-//   .use(emo)
-//   .use(def)
-//   .use(ins)
-//   .use(container,'codeblock',{marker:'@'});
-  
 markdownit.linkify.set({ fuzzyEmail: false });
+
+const navMenu = [
+  {
+    title: "Home",
+    icon: "lni lni-home",
+    route: "/",
+  },
+  {
+    title: "Store",
+    icon: "lni lni-restaurant",
+    route: "/store",
+  },
+  {
+    title: "About",
+    icon: "lni lni-question-circle",
+    route: "/about",
+  },
+];
 
 export default defineNuxtPlugin(async (nuxtApp) => {
     console.log(`App Name: ${nuxtApp.globalName}`);
@@ -48,6 +58,18 @@ export default defineNuxtPlugin(async (nuxtApp) => {
             socials: social.value.data,
             logo: logoURL,
             mdit: markdownit,
+            navMenu: navMenu,
+            formatDate: (datetime) => {
+              var date = new Date(datetime);
+              var options = {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                timeZone: "Asia/Jakarta",
+              };
+      
+              return date.toLocaleDateString("en-US", options);
+            },
             formatPrice: (number) => {
                 return `Rp. ${Intl.NumberFormat('id-ID', {
                     maximumSignificantDigits: 3,

@@ -1,30 +1,51 @@
 <template>
-    <div class="btm-nav">
-        <RouterLink to="/"> 
-            <button type="button" class="text-primary flex items-center">
-                <i class="lni lni-home p-2"></i>
-                <span class="text-sm hidden sm:inline-block pt-0.5">Home</span>
-            </button>
-        </RouterLink>
-        <RouterLink to="/products">                
-            <button type="button" class="text-primary flex items-center">
-                <i class="lni lni-shopping-basket p-2"></i>
-                <span class="text-sm hidden sm:inline-block pt-0.5">Products</span>
-            </button>
-        </RouterLink>
-        <RouterLink to="/about">
-            <button type="button" class="text-primary flex items-center">
-                <i class="lni lni-restaurant p-2"></i>
-                <span class="text-sm hidden sm:inline-block pt-0.5">About Us</span>
-            </button>
-        </RouterLink>
+  <div>
+    <div class="relative">
+      <!-- <div class="navbar light-mode bg-base-100 z-10 fixed top-0">
+        <div class="navbar-start">
+          <NuxtLink to="/" class="font-bold ml-2">Dapur Lestari</NuxtLink>
+        </div>
+        <div class="navbar-end">
+          <ul class="menu menu-horizontal px-1 space-x-3 hidden md:flex">
+            <li v-for="(menu, index) in $navMenu" :key="index">
+              <NuxtLink :to="menu.route" class="btn nav capitalize">{{
+                menu.title
+              }}</NuxtLink>
+            </li>
+          </ul>
+          <div class="dropdown dropdown-left">
+            <label tabindex="0" class="btn btn-ghost md:hidden">
+              <i class="lni lni-menu"></i>
+            </label>
+            <ul
+              tabindex="0"
+              class="menu menu-compact dropdown-content mr-2 p-2 shadow bg-base-200 rounded-box w-52">
+              <li v-for="(menu, index) in $navMenu" :key="index">
+                <NuxtLink :to="menu.route" class="btn nav capitalize">{{
+                  menu.title
+                }}</NuxtLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+      <div class="navbar light-mode bg-base-200 z-10 fixed bottom-0 p-0 m-0">
+        <div class="navbar-center w-full h-full">
+          <ul
+            class="menu menu-horizontal items-center justify-evenly w-full flex p-0 h-full">
+            <li v-for="(menu, index) in $navMenu" :key="index" class="p-0">
+              <NuxtLink :to="menu.route" class="btn nav capitalize">
+                <i :class="menu.icon"></i>
+                <span class="mt-0.5">{{ menu.title }}</span>
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>
