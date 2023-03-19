@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="relative">
-      <!-- <div class="navbar light-mode bg-base-100 z-10 fixed top-0">
+      <!-- Navbar for large screen -->
+      <div
+        class="navbar light-mode bg-base-100 z-10 fixed top-0 hidden md:inline-block">
         <div class="navbar-start">
           <NuxtLink to="/" class="font-bold ml-2">Dapur Lestari</NuxtLink>
         </div>
@@ -28,8 +30,11 @@
             </ul>
           </div>
         </div>
-      </div> -->
-      <div class="navbar light-mode bg-base-200 z-10 fixed bottom-0 p-0 m-0">
+      </div>
+
+      <!-- Bottom Navbar for mobile screen -->
+      <div
+        class="navbar light-mode bg-base-200 z-10 fixed bottom-0 p-0 m-0 inline-block md:hidden">
         <div class="navbar-center w-full h-full">
           <ul
             class="menu menu-horizontal items-center justify-evenly w-full flex p-0 h-full">
