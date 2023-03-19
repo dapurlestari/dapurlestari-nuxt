@@ -12,10 +12,11 @@
           {{ productPage.contentful.subtitle }}
         </p>
         <div class="grid grid-rows-6 grid-flow-col gap-4 h-64 mt-6">
+          <!-- <div class="row-span-6 col-span-3 bg-yellow-400"></div> -->
           <div
             v-for="banner in banners"
             :key="banner.id"
-            :class="banner.style + ' bg-gray-200 rounded-lg'">
+            :class="`${banner.style} bg-gray-200 rounded-lg`">
             <img
               :src="baseURL + banner.image.data.attributes.url"
               :alt="banner.title"
@@ -55,7 +56,7 @@
                     baseURL + product.attributes.images.data[0].attributes.url
                   "
                   :alt="product.attributes.images.data[0].alternativeText"
-                  class="h-60 w-full object-cover object-center group-hover:opacity-75" />
+                  class="aspect-1 w-full object-cover object-center group-hover:opacity-75" />
               </div>
               <h3 class="mt-4 text-secondary-500">
                 {{ product.attributes.name }}
