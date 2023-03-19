@@ -9,7 +9,7 @@
       </p>
 
       <div
-        class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-5 mt-10 mx-0 md:mx-20">
+        class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-5 mt-10 mx-0 md:mx-20">
         <div
           v-for="product in newProducts.products.data"
           class="group space-y-2">
