@@ -34,7 +34,7 @@
 
       <!-- Bottom Navbar for mobile screen -->
       <div
-        class="navbar light-mode bg-base-200 z-10 fixed bottom-0 p-0 m-0 inline-block md:hidden">
+        class="navbar light-mode bg-base-200 z-10 fixed bottom-0 pt-1 m-0 inline-block md:hidden rounded-t-2xl">
         <div class="navbar-center w-full h-full">
           <ul
             class="menu menu-horizontal items-center justify-evenly w-full flex p-0 h-full">
