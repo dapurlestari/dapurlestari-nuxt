@@ -5,10 +5,12 @@
         role="list"
         class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <li>
-          <div class="flex items-center">
-            <NuxtLink to="/store" class="mr-2 text-sm font-medium text-gray-900"
-              >Products</NuxtLink
-            >
+          <div class="flex items-center mx-1">
+            <NuxtLink
+              to="/store"
+              class="mr-2 text-sm font-medium text-gray-900">
+              Products
+            </NuxtLink>
             <svg
               width="16"
               height="20"
@@ -25,9 +27,9 @@
           <a
             href="#"
             aria-current="page"
-            class="font-medium text-gray-500 hover:text-gray-600"
-            >{{ product.attributes.name }}</a
-          >
+            class="font-medium text-gray-500 hover:text-gray-600">
+            {{ product.attributes.name }}
+          </a>
         </li>
       </ol>
     </nav>
