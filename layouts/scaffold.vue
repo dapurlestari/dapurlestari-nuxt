@@ -10,6 +10,7 @@
         </span>
       </div>
     </div>
+    <NuxtLoadingIndicator />
     <slot />
   </div>
 </template>
