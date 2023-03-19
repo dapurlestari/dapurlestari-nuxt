@@ -35,17 +35,36 @@
         </ol>
       </nav>
 
-      <div class="images inline-block md:hidden px-4 mt-8">
-        <div class="w-full carousel rounded-box">
+      <div class="images mt-8 mx-4">
+        <div class="carousel w-full">
           <div
             v-for="(image, index) in images"
             :key="index"
             :id="`item${image.id}`"
-            class="carousel-item w-full h-[400px]">
-            <img
-              :src="baseURL + image.attributes.url"
-              class="w-full object-cover rounded-box"
-              alt="Tailwind CSS Carousel component" />
+            class="carousel-item w-full max-h-[400px]">
+            <label :for="`modal${image.id}`" class="w-full">
+              <img
+                class="w-full h-full object-cover rounded-box"
+                :src="baseURL + image.attributes.url"
+                :alt="`${image.attributes.alternativeText}`" />
+            </label>
+            <input
+              type="checkbox"
+              :id="`modal${image.id}`"
+              class="modal-toggle" />
+            <label :for="`modal${image.id}`" class="modal cursor-pointer">
+              <label class="modal-box max-w-5xl relative" for="">
+                <label
+                  :for="`modal${image.id}`"
+                  class="btn btn-xs btn-circle absolute right-2 top-2 p-0 text-sm">
+                  ✕
+                </label>
+                <img
+                  class="w-full object-cover rounded-box"
+                  :src="baseURL + image.attributes.url"
+                  :alt="`${image.attributes.alternativeText}`" />
+              </label>
+            </label>
           </div>
         </div>
         <div class="flex justify-center w-full py-2 gap-2">
@@ -57,37 +76,46 @@
             {{ index + 1 }}
           </a>
         </div>
-      </div>
-
-      <!-- Image gallery -->
-      <div
-        class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8 hidden md:inline-block">
-        <div
-          class="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
-          <img
-            :src="secondaryImage"
-            :alt="product.attributes.name"
-            class="h-full w-full object-cover object-center" />
-        </div>
-
-        <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+        <!-- <div class="carousel w-full px-4 mt-8">
           <div
-            v-for="image in centerImages"
-            class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
-            <img
-              :src="image"
-              :alt="product.attributes.name"
-              class="h-full w-full object-cover object-center" />
+            v-for="(image, index) in images"
+            :key="index"
+            :id="`item${image.id}`"
+            class="carousel-item w-full h-[400px]">
+            <label :for="`modal${image.id}`" class="">
+              <img
+                class="w-full h-full object-cover rounded-box"
+                :src="baseURL + image.attributes.url"
+                :alt="`${image.attributes.alternativeText}`" />
+            </label>
+            <input
+              type="checkbox"
+              :id="`modal${image.id}`"
+              class="modal-toggle" />
+            <label :for="`modal${image.id}`" class="modal cursor-pointer">
+              <label class="modal-box relative" for="">
+                <label
+                  :for="`modal${image.id}`"
+                  class="btn btn-xs btn-circle absolute right-2 top-2 p-0 text-sm">
+                  ✕
+                </label>
+                <img
+                  class="w-full object-cover rounded-box"
+                  :src="baseURL + image.attributes.url"
+                  :alt="`${image.attributes.alternativeText}`" />
+              </label>
+            </label>
           </div>
         </div>
-
-        <div
-          class="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
-          <img
-            :src="primaryImage"
-            :alt="product.attributes.name"
-            class="h-full w-full object-cover object-center" />
-        </div>
+        <div class="flex justify-center w-full py-2 gap-2">
+          <a
+            v-for="(image, index) in images"
+            :key="index"
+            :href="`#item${image.id}`"
+            class="btn btn-square btn-outline btn-sm p-0 text-xs">
+            {{ index + 1 }}
+          </a>
+        </div> -->
       </div>
 
       <!-- Product info -->
