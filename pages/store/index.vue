@@ -9,15 +9,18 @@
         {{ productPage.contentful.subtitle }}
       </p>
       <div class="grid grid-rows-6 grid-flow-col gap-4 h-64 mt-6">
-        <!-- <div class="row-span-6 col-span-3 bg-yellow-400"></div> -->
         <div
           v-for="banner in banners"
           :key="banner.id"
-          :class="`${banner.style} bg-gray-200 rounded-lg`">
+          :class="`${banner.style} bg-gray-200 rounded-lg relative`">
           <img
             :src="baseURL + banner.image.data.attributes.url"
             :alt="banner.title"
             class="h-full w-full object-cover object-center rounded-lg" />
+          <span
+            class="absolute bottom-2 right-3 text-white text-sm drop-shadow-[2px_4px_7px_rgba(0,0,0,0.7)]">
+            Ads
+          </span>
         </div>
       </div>
     </section>
