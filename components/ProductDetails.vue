@@ -1,5 +1,6 @@
 <template>
   <div class="bg-white pt-8 md:pt-24">
+    <!-- Breadcrumb -->
     <nav aria-label="Breadcrumb">
       <ol
         role="list"
