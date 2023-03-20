@@ -8,6 +8,21 @@ export default defineNuxtConfig({
       "@googlemaps/markerclusterer",
       "fast-deep-equal",
     ],
+    html: {
+      minify: {
+        collapseBooleanAttributes: true,
+        decodeEntities: true,
+        minifyCSS: true,
+        minifyJS: true,
+        processConditionalComments: true,
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        trimCustomFragments: true,
+        useShortDoctype: true,
+        preserveLineBreaks: false,
+        collapseWhitespace: true,
+      },
+    },
   },
   app: {
     head: {

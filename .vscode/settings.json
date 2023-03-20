@@ -1,5 +1,12 @@
 {
-  "cSpell.words": ["fawmi", "Nuxt", "oldrose"],
+  "cSpell.words": [
+    "Dapur",
+    "fawmi",
+    "Lestari",
+    "markerclusterer",
+    "Nuxt",
+    "oldrose"
+  ],
   "files.associations": {
     "*.scss": "postcss",
     "*.css": "tailwindcss"
