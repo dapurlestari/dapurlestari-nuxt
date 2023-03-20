@@ -1,27 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxtjs/tailwindcss',
-  ],
+  modules: ["@nuxtjs/tailwindcss"],
   // build: { transpile: ["@fawmi/vue-google-maps"] },
   build: {
     transpile: [
-      '@fawmi/vue-google-maps', 
-      '@googlemaps/markerclusterer',
+      "@fawmi/vue-google-maps",
+      "@googlemaps/markerclusterer",
       "fast-deep-equal",
     ],
   },
   app: {
     head: {
       htmlAttrs: {
-        lang: 'en'
+        lang: "en",
       },
-      title: 'Dapur Lestari',
-      meta: [
-        {name: 'description', content: 'Dapur Lestari cookies'}
-      ],
+      title: "Dapur Lestari",
+      meta: [{ name: "description", content: "Dapur Lestari cookies" }],
       link: [
-        { rel:"stylesheet", type:"text/css", href:'https://cdn.lineicons.com/4.0/lineicons.css' }
+        {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "https://cdn.lineicons.com/4.0/lineicons.css",
+        },
       ],
       /* script: [
         {
@@ -38,8 +38,7 @@ export default defineNuxtConfig({
       baseURL: process.env.NUXT_BASE_URL,
       apiBase: process.env.NUXT_PUBLIC_API_BASE,
       mapAPIKey: process.env.NUXT_MAP_API_KEY,
-      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY
-    }
-  }
-
-})
+      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+    },
+  },
+});
