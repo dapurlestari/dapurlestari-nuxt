@@ -15,7 +15,7 @@
           </p>
           <button
             type="button"
-            class="btn bg-secondary-500 hover:bg-secondary-600 border-transparent hover:border-transparent px-14 text-black font-bold text-lg">
+            class="btn bg-secondary-500 hover:bg-secondary-600 border-transparent hover:border-transparent px-14 text-black font-bold text-lg normal-case">
             Beli Yuk!
           </button>
         </div>
