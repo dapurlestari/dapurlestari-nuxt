@@ -9,11 +9,11 @@
           {{ servedCompanies.subtitle }}
         </p>
 
-        <article
+        <!-- <article
           id="company-logo"
           class="flex overflow-hidden whitespace-nowrap mt-10">
           <div class="relative">
-            <ul class="marquee flex list-none pl-0 gap-4 mr-4">
+            <ul class="marquee flex list-none pl-0 gap-4">
               <li v-for="item in servedCompanies.companies">
                 <img
                   :src="baseURL + item.logo.data.attributes.url"
@@ -29,6 +29,21 @@
                   class="max-h-32" />
               </li>
             </ul>
+          </div>
+        </article> -->
+        <article v-if="!servedCompanies">Fetching Companies...</article>
+        <article
+          id="company-logo"
+          :class="`grid grid-flow-row grid-cols-${
+            servedCompanies.companies.length % 2 == 0 ? 2 : 1
+          } md:grid-cols-3 lg:grid-cols-5 gap-4 mx-auto px-4`">
+          <div
+            v-for="item in servedCompanies.companies"
+            class="p-2 w-full rounded-xl">
+            <img
+              :src="baseURL + item.logo.data.attributes.url"
+              :alt="item.name"
+              class="max-h-24 mx-auto" />
           </div>
         </article>
       </div>
