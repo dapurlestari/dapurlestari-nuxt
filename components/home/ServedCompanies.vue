@@ -1,11 +1,11 @@
 <template>
   <div>
-    <section class="flex justify-center mt-32">
+    <section class="mt-32">
       <div class="text-slate-900 text-center justify-center">
         <h2 class="font-bold text-3xl text-primary-500">
           {{ servedCompanies.title }}
         </h2>
-        <p class="tracking-wide text-lg my-3 mx-auto max-w-2xl px-5">
+        <p class="tracking-wide text-lg my-3 mx-auto px-5">
           {{ servedCompanies.subtitle }}
         </p>
 
@@ -13,20 +13,20 @@
           id="company-logo"
           class="flex overflow-hidden whitespace-nowrap mt-10">
           <div class="relative">
-            <ul class="marquee flex list-none pl-0">
+            <ul class="marquee flex list-none pl-0 gap-4 mr-4">
               <li v-for="item in servedCompanies.companies">
                 <img
                   :src="baseURL + item.logo.data.attributes.url"
                   :alt="item.name"
-                  class="max-h-28 mr-2" />
+                  class="max-h-32" />
               </li>
             </ul>
-            <ul class="marquee2 flex list-none pl-0 absolute top-0">
+            <ul class="marquee2 flex list-none pl-0 absolute top-0 gap-4">
               <li v-for="item in servedCompanies.companies">
                 <img
                   :src="baseURL + item.logo.data.attributes.url"
                   :alt="item.name"
-                  class="max-h-28 mr-2" />
+                  class="max-h-32" />
               </li>
             </ul>
           </div>
@@ -44,11 +44,11 @@ const baseURL = config.public.baseURL;
 
 <style scoped>
 .marquee {
-  animation: marquee 10s linear infinite;
+  animation: marquee 15s linear infinite;
 }
 
 .marquee2 {
-  animation: marquee2 10s linear infinite;
+  animation: marquee2 15s linear infinite;
 }
 
 #company-logo ul li {
