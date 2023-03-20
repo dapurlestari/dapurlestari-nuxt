@@ -1,9 +1,5 @@
 <template>
-  <NuxtLayout name="scaffold">
-    <template #title>Detail Produk</template>
-
-    <ProductDetails :product="product" />
-  </NuxtLayout>
+  <ProductDetails :product="product" />
 </template>
 
 <script setup>
