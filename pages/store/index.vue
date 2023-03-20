@@ -1,3 +1,4 @@
+import { type } from '../../.nuxt/types/imports';
 <template>
   <div
     class="mx-auto max-w-2xl px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 pt-8 md:pt-24">
@@ -45,8 +46,6 @@
       </div>
     </section>
 
-    <section></section>
-
     <div
       class="w-full grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 mt-5">
       <div v-for="product in products" :key="product.id">
@@ -56,9 +55,14 @@
               class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
               <img
                 :src="
-                  baseURL + product.attributes.images.data[0].attributes.url
+                  baseURL +
+                  (
+                    product.attributes.images.data[0].attributes.formats
+                      .medium ?? product.attributes.images.data[0].attributes
+                  ).url
                 "
                 :alt="product.attributes.images.data[0].alternativeText"
+                :title="product.attributes.name"
                 class="aspect-1 w-full object-cover object-center group-hover:opacity-75" />
             </div>
             <h3 class="mt-4 text-secondary-500">
@@ -78,8 +82,8 @@
 
     <section class="flex justify-center mt-20 mb-8">
       <div class="btn-group grid grid-cols-2">
-        <button class="btn btn-outline">Previous page</button>
-        <button class="btn btn-outline">Next</button>
+        <button type="button" class="btn btn-outline">Previous page</button>
+        <button type="button" class="btn btn-outline">Next</button>
       </div>
     </section>
   </div>

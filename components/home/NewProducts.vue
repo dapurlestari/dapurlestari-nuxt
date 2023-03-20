@@ -9,7 +9,7 @@
       </p>
 
       <div
-        class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-5 mt-10 mx-0 md:mx-20">
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-5 mt-10 mx-0 md:mx-20">
         <div
           v-for="product in newProducts.products.data"
           class="group space-y-2">
@@ -22,7 +22,7 @@
                     .url
                 "
                 :alt="product.attributes.name"
-                class="aspect-1 object-cover object-center group-hover:opacity-75" />
+                class="aspect-1 sm:aspect-2 md:aspect-1 object-cover object-center group-hover:opacity-75 w-full" />
             </div>
             <div class="absolute bottom-0 left-0 p-4 w-full">
               <h3

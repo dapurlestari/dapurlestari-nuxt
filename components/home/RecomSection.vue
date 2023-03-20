@@ -7,7 +7,7 @@
       <p class="tracking-wide my-3 mx-auto max-w-3xl">
         {{ recommendation.caption }}
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10 mx-0 md:mx-20">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-10 mx-0 md:mx-20">
         <div
           v-for="item in recommendations"
           :key="item.id"
