@@ -1,6 +1,7 @@
 <template>
   <div
     class="mx-auto max-w-2xl px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 pt-8 md:pt-24">
+    <!-- Title -->
     <section>
       <h1 class="text-3xl font-bold text-gray-900">
         {{ productPage.contentful.title }}
@@ -8,6 +9,7 @@
       <p class="text-black font-normal">
         {{ productPage.contentful.subtitle }}
       </p>
+      <!-- Ads Banner -->
       <div class="grid grid-rows-6 grid-flow-col gap-4 h-64 mt-6">
         <!-- <div class="row-span-3 bg-orange-700"></div> -->
         <div
@@ -85,13 +87,21 @@
 
 <script setup>
 const { $formatPrice, $placeholderImageURL } = useNuxtApp();
+var banners = [
+  {
+    id: 0,
+    title: "",
+    style: "row-span-6 col-span-3",
+  },
+];
+
 const config = useRuntimeConfig();
 const baseURL = config.public.baseURL;
 const defaultImage = $placeholderImageURL("Ads", 600, 450);
 
 const { data: page } = await useFetch("/api/pages/product");
 const productPage = page.value.data.attributes;
-const banners = productPage.ads_banners;
+banners = productPage.ads_banners;
 console.log(banners);
 
 const { data: response } = await useFetch("/api/products/get");
