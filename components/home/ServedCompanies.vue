@@ -31,12 +31,13 @@
             </ul>
           </div>
         </article> -->
-        <article v-if="!servedCompanies">Fetching Companies...</article>
         <article
           id="company-logo"
           :class="`grid grid-flow-row grid-cols-${
             servedCompanies.companies.length % 2 == 0 ? 2 : 1
-          } md:grid-cols-3 lg:grid-cols-5 gap-4 mx-auto px-4`">
+          } md:grid-cols-${
+            servedCompanies.companies.length % 4 == 0 ? 4 : 1
+          } gap-4 mx-auto px-4`">
           <div
             v-for="item in servedCompanies.companies"
             class="p-2 w-full rounded-xl">
