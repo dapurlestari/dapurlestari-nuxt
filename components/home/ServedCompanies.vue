@@ -44,11 +44,11 @@ const baseURL = config.public.baseURL;
 
 <style scoped>
 .marquee {
-  animation: marquee 5s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .marquee2 {
-  animation: marquee2 5s linear infinite;
+  animation: marquee2 10s linear infinite;
 }
 
 #company-logo ul li {
