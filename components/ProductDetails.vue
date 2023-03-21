@@ -80,7 +80,7 @@
 
     <!-- Product info -->
     <div class="mx-auto px-4 pb-16 sm:px-6 max-w-2xl lg:max-w-7xl lg:px-8">
-      <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+      <div class="lg:col-span-2 lg:pr-8">
         <h1
           class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl pt-8">
           {{ product.attributes.name }}
@@ -127,7 +127,7 @@
       <div class="divider"></div>
 
       <!-- Description and details -->
-      <div class="mt-4 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
+      <div class="mt-4 lg:pt-6 lg:pb-16 lg:pr-8">
         <div>
           <h3 class="">Description</h3>
           <div class="space-y-6">
