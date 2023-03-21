@@ -47,6 +47,7 @@
 </template>
 
 <script setup>
+// console.log(hotProducts);
 const config = useRuntimeConfig();
 const { hotProducts } = defineProps(["hotProducts"]);
 // const hotProductsSliced1 = hotProducts.products.data.slice(0, 2);
