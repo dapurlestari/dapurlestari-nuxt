@@ -2,7 +2,7 @@
   <div class="relative">
     <!-- Navbar for large screen -->
     <div
-      class="navbar light-mode bg-base-100 z-10 fixed top-0 hidden md:inline-block">
+      class="navbar light-mode bg-base-100 z-10 fixed top-0 hidden md:inline-block rounded-b-xl drop-shadow-xl">
       <div class="navbar-start">
         <NuxtLink to="/" class="font-bold ml-2">Dapur Lestari</NuxtLink>
       </div>
