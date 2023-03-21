@@ -1,9 +1,9 @@
 <template>
   <div class="flex container mx-auto px-4 pt-8 md:pt-24 min-h-screen">
     <article class="prose lg:prose-xl">
-      <h2>{{ privacyPolicy.title }}</h2>
+      <h2>{{ privacyPolicy?.title ?? "Privacy Policy" }}</h2>
       <div
-        v-html="$mdit.render(privacyPolicy.content)"
+        v-html="$mdit.render(privacyPolicy?.content ?? 'Loading...')"
         class="text-sm text-gray-800"></div>
     </article>
   </div>

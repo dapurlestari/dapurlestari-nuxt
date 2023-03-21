@@ -1,9 +1,9 @@
 <template>
   <div class="flex container mx-auto px-4 pt-8 md:pt-24 min-h-screen">
     <article class="prose lg:prose-xl">
-      <h2>{{ termsServices.title }}</h2>
+      <h2>{{ termsServices?.title ?? "Terms Services" }}</h2>
       <div
-        v-html="$mdit.render(termsServices.content)"
+        v-html="$mdit.render(termsServices?.content ?? 'Loading...')"
         class="text-sm text-gray-800"></div>
     </article>
   </div>
