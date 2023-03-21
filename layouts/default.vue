@@ -6,6 +6,8 @@
     <slot />
 
     <FooterSection />
+
+    <ScrollToTop />
   </div>
 </template>
 
