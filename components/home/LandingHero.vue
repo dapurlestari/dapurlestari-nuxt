@@ -7,7 +7,7 @@
       <div class="max-w-md space-y-8">
         <img
           :src="$logo"
-          alt=""
+          alt="Dapur Lestari Logo"
           class="w-36 inline-block bg-white p-7 mask mask-circle" />
         <p class="mb-10 text-white text-xl">
           {{ firstSlideshow.subtitle }}
