@@ -41,7 +41,7 @@
                 {{ " " }}
                 <dd class="inline text-gray-900">
                   <a
-                    :href="app.$myConfig.email"
+                    :href="`mailto:${app.$myConfig.email}`"
                     target="_blank"
                     class="underline"
                     >{{ app.$myConfig.email }}</a
