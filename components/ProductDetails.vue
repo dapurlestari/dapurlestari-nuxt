@@ -76,46 +76,6 @@
           {{ index + 1 }}
         </a>
       </div>
-      <!-- <div class="carousel w-full px-4 mt-8">
-        <div
-          v-for="(image, index) in images"
-          :key="index"
-          :id="`item${image.id}`"
-          class="carousel-item w-full h-[400px]">
-          <label :for="`modal${image.id}`" class="">
-            <img
-              class="w-full h-full object-cover rounded-box"
-              :src="baseURL + image.attributes.url"
-              :alt="`${image.attributes.alternativeText}`" />
-          </label>
-          <input
-            type="checkbox"
-            :id="`modal${image.id}`"
-            class="modal-toggle" />
-          <label :for="`modal${image.id}`" class="modal cursor-pointer">
-            <label class="modal-box relative" for="">
-              <label
-                :for="`modal${image.id}`"
-                class="btn btn-xs btn-circle absolute right-2 top-2 p-0 text-sm">
-                ✕
-              </label>
-              <img
-                class="w-full object-cover rounded-box"
-                :src="baseURL + image.attributes.url"
-                :alt="`${image.attributes.alternativeText}`" />
-            </label>
-          </label>
-        </div>
-      </div>
-      <div class="flex justify-center w-full py-2 gap-2">
-        <a
-          v-for="(image, index) in images"
-          :key="index"
-          :href="`#item${image.id}`"
-          class="btn btn-square btn-outline btn-sm p-0 text-xs">
-          {{ index + 1 }}
-        </a>
-      </div> -->
     </div>
 
     <!-- Product info -->
@@ -202,30 +162,11 @@
 </template>
 
 <script setup>
-const { $formatPrice, $placeholderImageURL, $mdit } = useNuxtApp();
+const { $formatPrice, $mdit } = useNuxtApp();
 
 const { product } = defineProps(["product"]);
 const baseURL = "https://panel.dapurlestari.id";
 const images = product.attributes.images.data;
-const defaultImage = $placeholderImageURL(product.attributes.name, 600, 600);
-const defaultImagePortrait = $placeholderImageURL(
-  product.attributes.name,
-  400,
-  800
-);
-
-const mainImage =
-  images.length > 0 ? baseURL + images[0].attributes.url : defaultImagePortrait;
-
-const secondaryImage =
-  images.length > 3 ? baseURL + images[3].attributes.url : defaultImagePortrait;
-
-const centerImages = [
-  images.length > 1 ? baseURL + images[1].attributes.url : defaultImage,
-  images.length > 2 ? baseURL + images[2].attributes.url : defaultImage,
-];
-// console.log(centerImages)
-const primaryImage = mainImage;
 </script>
 
 <style scoped></style>
