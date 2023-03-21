@@ -4,14 +4,18 @@
     <div
       class="navbar light-mode bg-base-100 z-10 fixed top-0 hidden md:inline-block rounded-b-xl drop-shadow-xl">
       <div class="navbar-start">
-        <NuxtLink to="/" class="font-bold ml-2">Dapur Lestari</NuxtLink>
+        <NuxtLink to="/" class="font-extrabold ml-2 tracking-wide"
+          >Dapur Lestari</NuxtLink
+        >
       </div>
       <div class="navbar-end">
         <ul class="menu menu-horizontal px-1 space-x-3 hidden md:flex">
           <li v-for="(menu, index) in $navMenu" :key="index">
-            <NuxtLink :to="menu.route" class="btn nav capitalize">{{
-              menu.title
-            }}</NuxtLink>
+            <NuxtLink
+              :to="menu.route"
+              class="btn nav capitalize font-bold tracking-wide"
+              >{{ menu.title }}</NuxtLink
+            >
           </li>
         </ul>
         <div class="dropdown dropdown-left">
