@@ -29,6 +29,32 @@ const navMenu = [
   },
 ];
 
+function formatPhoneNumberID(phoneNumberString) {
+  // Menghapus semua karakter selain angka
+  var cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+
+  // Jika nomor telepon dimulai dengan 0, mengubah menjadi +62
+  if (cleaned.charAt(0) === "0") {
+    cleaned = "+62 " + cleaned.substring(1);
+  }
+
+  // Mencocokkan dengan format telepon Indonesia
+  var match = cleaned.match(/^\+?(62|0)([1-9][0-9]{8,11})$/);
+
+  // Jika cocok dengan format Indonesia, mengembalikan format nomor telepon dengan spasi
+  if (match) {
+    return (
+      "+" +
+      match[1] +
+      " " +
+      match[2].replace(/(\d{3})(\d{4})(\d{2,3})/, "$1 $2 $3")
+    );
+  }
+
+  // Jika tidak cocok dengan format Indonesia, mengembalikan nomor asli
+  return phoneNumberString;
+}
+
 export default defineNuxtPlugin(async (nuxtApp) => {
   // console.log(`App Name: ${nuxtApp.globalName}`);
   const { data } = await useFetch("/api/config/get");
@@ -66,6 +92,7 @@ export default defineNuxtPlugin(async (nuxtApp) => {
           currency: "IDR",
         }).format(number)}`;
       },
+      formatPhoneNumberID: (number) => formatPhoneNumberID(number),
       placeholderImageURL: (
         label,
         width,
