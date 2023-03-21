@@ -56,7 +56,7 @@ function formatPhoneNumberID(phoneNumberString) {
 }
 
 export default defineNuxtPlugin(async (nuxtApp) => {
-  // console.log(`App Name: ${nuxtApp.globalName}`);
+  console.log(`App Name: ${nuxtApp.globalName}`);
   const { data } = await useFetch("/api/config/get");
   const { data: social } = await useFetch("/api/socials/get");
 
