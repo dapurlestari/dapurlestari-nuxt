@@ -16,10 +16,12 @@
           v-for="banner in banners"
           :key="banner.id"
           :class="`${banner.style} bg-gray-200 rounded-lg relative h-full`">
-          <img
-            :src="baseURL + banner.image.data.attributes.url"
-            :alt="banner.title"
-            class="h-full w-full object-cover object-center rounded-lg" />
+          <a :href="banner.link" target="_blank" :title="banner.title">
+            <img
+              :src="baseURL + banner.image.data.attributes.url"
+              :alt="banner.title"
+              class="h-full w-full object-cover object-center rounded-lg" />
+          </a>
           <span
             class="absolute bottom-2 right-3 text-white text-sm drop-shadow-[2px_4px_7px_rgba(0,0,0,0.7)]">
             Ads
