@@ -1,4 +1,3 @@
-import { type } from '../../.nuxt/types/imports';
 <template>
   <div
     class="mx-auto max-w-2xl px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 pt-8 md:pt-24">
@@ -90,7 +89,7 @@ import { type } from '../../.nuxt/types/imports';
 </template>
 
 <script setup>
-const { $formatPrice, $placeholderImageURL } = useNuxtApp();
+const { $formatPrice } = useNuxtApp();
 var banners = [
   {
     id: 0,
@@ -101,23 +100,14 @@ var banners = [
 
 const config = useRuntimeConfig();
 const baseURL = config.public.baseURL;
-const defaultImage = $placeholderImageURL("Ads", 600, 450);
 
 const { data: page } = await useFetch("/api/pages/product");
 const productPage = page.value.data.attributes;
 banners = productPage.ads_banners;
-console.log(banners);
+// console.log(banners);
 
 const { data: response } = await useFetch("/api/products/get");
 const products = response.value.data;
-// console.log(products);
-/* useHead({
-      title: 'Dapur Lestari | Products',
-      meta: [
-        {name: 'description', content: 'Dapur Lestari Products'},
-        {name: 'keywords', content: 'dapur, lestari, produk, kukis'},
-      ],
-    }) */
 </script>
 
 <style scoped>
