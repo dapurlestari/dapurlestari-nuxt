@@ -60,7 +60,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Montserrat"],
-        serif: ["Playfair Display"],
+        serif: ["PlayfairDisplay"],
       },
       animation: {
         marquee: "marquee 25s linear infinite",

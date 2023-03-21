@@ -2,7 +2,18 @@
 export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   // build: { transpile: ["@fawmi/vue-google-maps"] },
+  css: ["~/assets/css/fonts.css"],
   build: {
+    extend(config, { isClient }) {
+      if (isClient) {
+        config.plugins.push(
+          new (require("@nuxtjs/webpackmonitor"))({
+            capture: true,
+            target: "server",
+          })
+        );
+      }
+    },
     transpile: [
       "@fawmi/vue-google-maps",
       "@googlemaps/markerclusterer",
@@ -40,7 +51,15 @@ export default defineNuxtConfig({
         lang: "en",
       },
       title: "Dapur Lestari",
-      meta: [{ name: "description", content: "Dapur Lestari cookies" }],
+      meta: [
+        { charset: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          "http-equiv": "Cache-Control",
+          content: "max-age=86400, must-revalidate",
+        },
+        { name: "description", content: "Dapur Lestari cookies" },
+      ],
       link: [
         {
           rel: "stylesheet",
