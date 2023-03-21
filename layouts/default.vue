@@ -1,7 +1,8 @@
 <template>
   <div>
     <NuxtLoadingIndicator />
-    <BottomNav />
+    <TopNavBar />
+    <BottomNavBar />
     <slot />
 
     <FooterSection />

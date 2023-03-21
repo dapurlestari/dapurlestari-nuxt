@@ -49,12 +49,12 @@
 <script setup>
 const config = useRuntimeConfig();
 const { hotProducts } = defineProps(["hotProducts"]);
-const hotProductsSliced1 = hotProducts.products.data.slice(0, 2);
-const hotProductsSliced2 = hotProducts.products.data.slice(2, 5);
-const hotProductsSliced3 = hotProducts.products.data.slice(5, 7);
+// const hotProductsSliced1 = hotProducts.products.data.slice(0, 2);
+// const hotProductsSliced2 = hotProducts.products.data.slice(2, 5);
+// const hotProductsSliced3 = hotProducts.products.data.slice(5, 7);
 const baseURL = config.public.baseURL;
-console.log("prodID");
-console.log(hotProductsSliced1[0].id);
+// console.log("prodID");
+// console.log(hotProductsSliced1[0].id);
 </script>
 
 <style scoped></style>

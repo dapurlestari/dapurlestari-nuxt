@@ -1,15 +1,5 @@
 // markdown-it nuxt: https://github.com/nuxt-community/markdownit-module/issues/47
-// import hljs  from 'highlight.js';
 import mdit from "markdown-it";
-
-// import sub from 'markdown-it-sub';
-// import sup from 'markdown-it-sup';
-// import fn from 'markdown-it-footnote';
-// import emo from 'markdown-it-emoji';
-// import def from 'markdown-it-deflist';
-// import ins from 'markdown-it-ins';
-// import container from 'markdown-it-container';
-
 const markdownit = new mdit({
   html: true,
   xhtmlOut: false,
@@ -40,14 +30,14 @@ const navMenu = [
 ];
 
 export default defineNuxtPlugin(async (nuxtApp) => {
-  console.log(`App Name: ${nuxtApp.globalName}`);
+  // console.log(`App Name: ${nuxtApp.globalName}`);
   const { data } = await useFetch("/api/config/get");
   const { data: social } = await useFetch("/api/socials/get");
 
   const config = useRuntimeConfig();
   // console.log(social)
   const configData = data.value.data;
-  console.log(configData.attributes.logo.data.attributes.url);
+  // console.log(configData.attributes.logo.data.attributes.url);
   const logoURL =
     config.public.baseURL + configData.attributes.logo.data.attributes.url;
   // console.log(logoURL);

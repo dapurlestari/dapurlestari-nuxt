@@ -24,7 +24,6 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig();
 const { recommendation, recommendations } = defineProps([
   "recommendation",
   "recommendations",
