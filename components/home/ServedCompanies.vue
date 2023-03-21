@@ -8,29 +8,6 @@
         <p class="tracking-wide text-lg my-3 mx-auto px-5">
           {{ servedCompanies.subtitle }}
         </p>
-
-        <!-- <article
-          id="company-logo"
-          class="flex overflow-hidden whitespace-nowrap mt-10">
-          <div class="relative">
-            <ul class="marquee flex list-none pl-0 gap-4">
-              <li v-for="item in servedCompanies.companies">
-                <img
-                  :src="baseURL + item.logo.data.attributes.url"
-                  :alt="item.name"
-                  class="max-h-32" />
-              </li>
-            </ul>
-            <ul class="marquee2 flex list-none pl-0 absolute top-0 gap-4">
-              <li v-for="item in servedCompanies.companies">
-                <img
-                  :src="baseURL + item.logo.data.attributes.url"
-                  :alt="item.name"
-                  class="max-h-32" />
-              </li>
-            </ul>
-          </div>
-        </article> -->
         <article
           id="company-logo"
           :class="`grid grid-flow-row grid-cols-${
