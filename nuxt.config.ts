@@ -8,7 +8,17 @@ export default defineNuxtConfig({
       "@googlemaps/markerclusterer",
       "fast-deep-equal",
     ],
+    terser: {
+      // https://github.com/terser/terser#compress-options
+      // remove console command on production
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+    },
     html: {
+      // minify assets
       minify: {
         collapseBooleanAttributes: true,
         decodeEntities: true,
