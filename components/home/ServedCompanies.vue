@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="mt-32">
+    <section class="my-32">
       <div class="text-slate-900 text-center justify-center">
         <h2 class="font-bold text-3xl text-primary-500">
           {{ servedCompanies.title }}
@@ -14,7 +14,7 @@
             servedCompanies.companies.length % 2 == 0 ? 2 : 1
           } md:grid-cols-${
             servedCompanies.companies.length % 4 == 0 ? 4 : 1
-          } gap-4 mx-auto px-4`">
+          } gap-4 mx-auto px-4 pt-8`">
           <div
             v-for="item in servedCompanies.companies"
             class="p-2 w-full rounded-xl">
