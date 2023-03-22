@@ -92,7 +92,12 @@
               </tbody>
             </table>
           </div>
-          <div class="btn hidden md:flex">Beli Sekarang</div>
+          <a
+            :href="waMe"
+            target="_blank"
+            class="btn w-full hidden md:flex mt-4">
+            Beli Sekarang
+          </a>
         </div>
       </div>
     </div>
@@ -112,7 +117,9 @@
           </article>
         </div>
       </div>
-      <div class="btn w-full md:hidden mt-4">Beli Sekarang</div>
+      <a :href="waMe" target="_blank" class="btn w-full md:hidden mt-4">
+        Beli Sekarang
+      </a>
     </div>
   </div>
 </template>
@@ -120,7 +127,7 @@
 <script setup>
 const { id } = useRoute().params;
 const { data, error } = await useFetch("/api/products/" + id);
-const { $formatPrice, $mdit } = useNuxtApp();
+const { $formatPrice, $mdit, $myConfig } = useNuxtApp();
 const baseURL = "https://panel.dapurlestari.id";
 
 // console.log(data == null);
@@ -130,6 +137,7 @@ if (error.value) {
 const product = data.value.data;
 const seo = product.attributes.seo;
 const images = product.attributes.images.data;
+const waMe = `https://wa.me/${$myConfig.phone}/?text=Halo kak. mau pesen ${product.attributes.name} nya dong! 😊`;
 
 useHead({
   title: seo.metaTitle,
