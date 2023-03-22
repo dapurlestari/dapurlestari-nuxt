@@ -93,7 +93,7 @@ useHead({
   link: [
     {
       rel: "canonical",
-      href: `https://dapurlestari.id/terms-services`,
+      href: `https://dapurlestari.id/store`,
     },
   ],
 });
