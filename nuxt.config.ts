@@ -66,6 +66,10 @@ export default defineNuxtConfig({
           type: "text/css",
           href: "https://cdn.lineicons.com/4.0/lineicons.css",
         },
+        {
+          rel: "canonical",
+          href: "https://dapurlestari.id",
+        },
       ],
       script: [
         /* {

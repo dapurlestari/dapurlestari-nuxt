@@ -145,6 +145,12 @@ useHead({
     { name: "description", content: seo.metaDescription },
     { name: "keywords", content: seo.keywords },
   ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://dapurlestari.id/store/${product.attributes.slug}`,
+    },
+  ],
 });
 </script>
 
