@@ -1,5 +1,4 @@
 <template>
-  <!-- <ProductDetails :product="product" /> -->
   <div class="pt-0 md:pt-16 pb-10 lg:pb-16">
     <div class="p-4">
       <button
@@ -28,24 +27,6 @@
             :alt="image.attributes.alternativeText"
             class="object-cover w-full h-full" />
         </SwiperSlide>
-        <!-- <SwiperSlide>
-          <img
-            src="https://cdn11.bigcommerce.com/s-8klxh9o/images/stencil/1111x736/products/569/11571/lenny-larry_complete-cookie_chocolate-chip_pick-mix_uk__05621.1524053269.png?c=3"
-            alt="image"
-            class="object-cover w-full h-full" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://placeimg.com/640/480/any"
-            alt="image"
-            class="object-cover w-full h-full" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src="https://placeimg.com/640/480/nature"
-            alt="image"
-            class="object-cover w-full h-full" />
-        </SwiperSlide> -->
       </Swiper>
       <div class="md:flex-1">
         <div class="flex flex-col p-4 justify-between h-full">
@@ -105,9 +86,27 @@
               </tbody>
             </table>
           </div>
-          <div class="btn">Beli Sekarang</div>
+          <div class="btn hidden md:flex">Beli Sekarang</div>
         </div>
       </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 lg:pt-6 lg:pb-16 lg:pr-8">
+      <div>
+        <h3 class="">Description</h3>
+        <div class="space-y-6">
+          <p class="text-base text-gray-900">
+            {{ product.attributes.description }}
+          </p>
+          <article
+            v-if="product.attributes.description_rich"
+            class="prose lg:prose-xl">
+            <div
+              v-html="$mdit.render(product.attributes.description_rich)"
+              class="text-sm text-black"></div>
+          </article>
+        </div>
+      </div>
+      <div class="btn w-full md:hidden mt-4">Beli Sekarang</div>
     </div>
   </div>
 </template>
