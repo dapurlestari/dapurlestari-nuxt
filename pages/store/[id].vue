@@ -1,6 +1,6 @@
 <template>
-  <div class="pt-0 md:pt-16 pb-10 lg:pb-16">
-    <div class="p-4">
+  <div class="pt-0 md:pt-16 pb-10 lg:pb-16 max-w-7xl mx-auto">
+    <div class="p-4 xl:px-0 lg:py-4">
       <button
         type="button"
         title="Back Button"
@@ -11,7 +11,7 @@
       </button>
     </div>
 
-    <div class="flex flex-col md:flex-row h-[800px] lg:h-[500px]">
+    <div class="flex flex-col md:flex-row h-[700px] lg:h-[500px] mx-4 md:mx-0">
       <Swiper
         :modules="[SwiperPagination, SwiperZoom]"
         :loop="true"
@@ -20,7 +20,7 @@
         :autoplay="false"
         :pagination="true"
         :zoom="true"
-        class="flex-1 w-full">
+        class="flex-1 w-full rounded-lg">
         <SwiperSlide v-for="(image, index) in images" :key="index">
           <img
             :src="`${baseURL}${image.attributes.url}`"
@@ -29,13 +29,19 @@
         </SwiperSlide>
       </Swiper>
       <div class="md:flex-1">
-        <div class="flex flex-col p-4 justify-between h-full">
+        <div class="flex flex-col p-2 lg:p-4 justify-between h-full">
           <div class="title">
             <div
               class="category flex flex-row space-x-2 align-middle items-center">
-              <h2 class="text-sm uppercase">cookies</h2>
-              <i class="lni lni-minus text-[8pt]"></i>
-              <h2 class="text-sm uppercase">paket a</h2>
+              <h2 class="text-sm uppercase">
+                {{ product.attributes.category.data?.attributes.name }}
+              </h2>
+              <i
+                v-if="product.attributes.bundle.data"
+                class="lni lni-minus text-[8pt]"></i>
+              <h2 class="text-sm uppercase">
+                {{ product.attributes.bundle.data?.attributes.name }}
+              </h2>
             </div>
             <h1 class="text-3xl md:text-4xl font-bold tracking-wide">
               {{ product.attributes.name }}
@@ -48,14 +54,14 @@
                   <td>Kode P-IRT</td>
                   <td>{{ product.attributes.pirt_code }}</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <td>SKU</td>
                   <td>
                     #DL-COO{{ product.id }}X{{
                       product.attributes.release_year
                     }}
                   </td>
-                </tr>
+                </tr> -->
                 <tr>
                   <td>Berat Bersih</td>
                   <td>
@@ -90,9 +96,9 @@
         </div>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto px-4 lg:pt-6 lg:pb-16 lg:pr-8">
+    <div class="max-w-7xl mx-auto px-6 md:px-4 lg:pt-6 lg:pb-16 lg:pr-8">
       <div>
-        <h3 class="">Description</h3>
+        <h1 class="text-2xl font-bold">Description</h1>
         <div class="space-y-6">
           <p class="text-base text-gray-900">
             {{ product.attributes.description }}
@@ -133,37 +139,6 @@ useHead({
   ],
 });
 </script>
-
-<!-- <script>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-import { Pagination } from "swiper";
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    const onSwiper = (swiper) => {
-      console.log(swiper);
-    };
-    const onSlideChange = () => {
-      console.log("slide change");
-    };
-    return {
-      onSwiper,
-      onSlideChange,
-      modules: [Pagination],
-    };
-  },
-};
-</script> -->
 
 <style scoped>
 tr > td {
