@@ -73,6 +73,7 @@ var banners = [
   },
 ];
 
+const { $myConfig } = useNuxtApp();
 const config = useRuntimeConfig();
 const baseURL = config.public.baseURL;
 
@@ -83,6 +84,19 @@ banners = productPage.ads_banners;
 
 const { data: response } = await useFetch("/api/products/get");
 const products = response.value.data;
+useHead({
+  title: $myConfig.seo.metaTitle,
+  meta: [
+    { name: "description", content: $myConfig.seo.metaDescription },
+    { name: "keywords", content: $myConfig.seo.keywords },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://dapurlestari.id/terms-services`,
+    },
+  ],
+});
 </script>
 
 <style scoped>

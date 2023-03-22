@@ -10,9 +10,22 @@
 </template>
 
 <script setup>
-const { $mdit } = useNuxtApp();
+const { $myConfig, $mdit } = useNuxtApp();
 const { data } = await useFetch("/api/pages/about");
 const about = data.value.data.attributes.contentful;
+useHead({
+  title: $myConfig.seo.metaTitle,
+  meta: [
+    { name: "description", content: $myConfig.seo.metaDescription },
+    { name: "keywords", content: $myConfig.seo.keywords },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://dapurlestari.id/about`,
+    },
+  ],
+});
 </script>
 
 <style scoped></style>
