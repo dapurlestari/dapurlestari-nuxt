@@ -23,6 +23,7 @@
     "@fawmi/vue-google-maps": "0.9.67",
     "daisyui": "^2.50.0",
     "markdown-it": "^13.0.1",
+    "nuxt-swiper": "^1.0.1",
     "vue-gtag-next": "^1.14.0"
   }
 }

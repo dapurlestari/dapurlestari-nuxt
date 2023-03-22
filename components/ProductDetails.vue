@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-white pt-8 md:pt-24">
+  <div class="bg-white pt-8 md:pt-24 max-w-5xl mx-auto">
     <!-- Breadcrumb -->
     <nav aria-label="Breadcrumb">
       <ol
         role="list"
-        class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        class="mx-auto flex items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <li>
           <div class="flex items-center mx-1">
             <NuxtLink
@@ -41,7 +41,7 @@
           v-for="(image, index) in images"
           :key="index"
           :id="`item${image.id}`"
-          class="carousel-item w-full max-h-[400px]">
+          class="carousel-item w-full max-h-[450px]">
           <label :for="`modal${image.id}`" class="w-full">
             <img
               class="w-full h-full object-cover rounded-box"

@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-swiper"],
   // build: { transpile: ["@fawmi/vue-google-maps"] },
   css: ["~/assets/css/fonts.css"],
   build: {
@@ -67,11 +67,14 @@ export default defineNuxtConfig({
           href: "https://cdn.lineicons.com/4.0/lineicons.css",
         },
       ],
-      /* script: [
-        {
+      script: [
+        /* {
           src: `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&libraries=places&callback=Function.prototype`
-        }
-      ] */
+        } */
+        /* {
+          src: "https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js",
+        }, */
+      ],
     },
   },
   runtimeConfig: {
