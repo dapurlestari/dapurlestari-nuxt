@@ -34,35 +34,3 @@ const config = useRuntimeConfig();
 const { servedCompanies } = defineProps(["servedCompanies"]);
 const baseURL = config.public.baseURL;
 </script>
-
-<style scoped>
-.marquee {
-  animation: marquee 15s linear infinite;
-}
-
-.marquee2 {
-  animation: marquee2 15s linear infinite;
-}
-
-#company-logo ul li {
-  margin: 8px;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes marquee2 {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-</style>
