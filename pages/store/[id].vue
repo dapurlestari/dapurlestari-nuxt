@@ -24,7 +24,7 @@
         <SwiperSlide v-for="(image, index) in images" :key="index">
           <img
             :src="`${baseURL}${image.attributes.url}`"
-            :alt="image.attributes.alternativeText"
+            :alt="image.attributes.alternativeText ?? product.attributes.name"
             class="object-cover w-full h-full" />
         </SwiperSlide>
       </Swiper>
