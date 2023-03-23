@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "nuxt-swiper"],
   // build: { transpile: ["@fawmi/vue-google-maps"] },
   css: ["~/assets/css/fonts.css"],
+  // target: "static",
+  // router: {
+  //   trailingSlash: false,
+  // },
   build: {
     extend(config, { isClient }) {
       if (isClient) {
@@ -43,6 +47,24 @@ export default defineNuxtConfig({
         preserveLineBreaks: false,
         collapseWhitespace: true,
       },
+    },
+  },
+  cache: {
+    maxAge: 60 * 60 * 24 * 7, // 1 week
+    immutable: true,
+
+    // Cache images and fonts for 1 year
+    staticAssets: {
+      cacheControl: "public, max-age=31536000, immutable",
+      keyPrefix: "static-assets",
+      version: "1.0.0",
+    },
+
+    // Cache API responses for 5 minutes
+    api: {
+      cacheControl: "public, max-age=300",
+      keyPrefix: "api",
+      version: "1.0.0",
     },
   },
   app: {
