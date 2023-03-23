@@ -1,7 +1,7 @@
 <template>
   <div class="flex container mx-auto min-h-screen px-4 pt-8 md:pt-24">
     <article class="prose lg:prose-xl">
-      <h2>{{ about?.title ?? "About" }}</h2>
+      <h1>{{ about?.title ?? "About" }}</h1>
       <div
         v-html="$mdit.render(about?.content ?? 'Loading...')"
         class="text-sm text-gray-800"></div>
@@ -27,5 +27,3 @@ useHead({
   ],
 });
 </script>
-
-<style scoped></style>
