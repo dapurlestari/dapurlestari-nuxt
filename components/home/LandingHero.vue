@@ -29,5 +29,3 @@ const { firstSlideshow } = defineProps(["firstSlideshow"]);
 const firstSlideshowURL =
   config.public.baseURL + firstSlideshow.image.data.attributes.url;
 </script>
-
-<style scoped></style>

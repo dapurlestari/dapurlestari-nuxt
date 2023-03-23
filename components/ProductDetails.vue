@@ -168,5 +168,3 @@ const { product } = defineProps(["product"]);
 const baseURL = "https://panel.dapurlestari.id";
 const images = product.attributes.images.data;
 </script>
-
-<style scoped></style>

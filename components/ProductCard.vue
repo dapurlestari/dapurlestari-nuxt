@@ -37,5 +37,3 @@ const firstImage = productAttr.images.data[0].attributes;
 const imageURL =
   config.public.baseURL + (firstImage.formats.medium ?? firstImage).url;
 </script>
-
-<style scoped></style>

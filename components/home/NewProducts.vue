@@ -21,5 +21,3 @@
 <script setup>
 const { newProducts } = defineProps(["newProducts"]);
 </script>
-
-<style scoped></style>

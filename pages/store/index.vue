@@ -98,9 +98,3 @@ useHead({
   ],
 });
 </script>
-
-<style scoped>
-p {
-  font-weight: bold;
-}
-</style>

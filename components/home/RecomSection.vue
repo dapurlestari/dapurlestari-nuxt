@@ -29,5 +29,3 @@ const { recommendation, recommendations } = defineProps([
   "recommendations",
 ]);
 </script>
-
-<style scoped></style>
