@@ -138,7 +138,7 @@ const product = data.value.data;
 const seo = product.attributes.seo;
 const images = product.attributes.images.data;
 const waMe = `https://wa.me/${$myConfig.phone}/?text=Halo kak. mau pesen ${product.attributes.name} nya dong! 😊`;
-const url = `https://dapurlestari.id/${product.attributes.slug}`;
+const url = `https://dapurlestari.id/store/${product.attributes.slug}`;
 const firstImageURL = `${baseURL}${images[0].attributes.url}`;
 
 useHead({
@@ -171,7 +171,7 @@ useHead({
   link: [
     {
       rel: "canonical",
-      href: `https://dapurlestari.id/store/${product.attributes.slug}`,
+      href: url,
     },
   ],
 });
