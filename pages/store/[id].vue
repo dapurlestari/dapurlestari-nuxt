@@ -103,7 +103,7 @@
     </div>
     <div class="max-w-7xl mx-auto px-6 md:px-4 lg:pt-6 lg:pb-16 lg:pr-8">
       <div>
-        <h1 class="text-2xl font-bold">Description</h1>
+        <h2 class="text-2xl font-bold">Description</h2>
         <div class="space-y-6">
           <p class="text-base text-gray-900">
             {{ product.attributes.description }}
