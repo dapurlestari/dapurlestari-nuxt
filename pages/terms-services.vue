@@ -17,7 +17,7 @@ const { $mdit } = useNuxtApp();
 const { data } = await useFetch("/api/pages/termsServices");
 const termsServicesPage = data.value.data.attributes;
 const termsServices = termsServicesPage.contentful;
-const url = "https://dapurlestari.id/terms-service";
+const url = "https://dapurlestari.id/terms-services";
 const image =
   config.public.baseURL + termsServicesPage.seo.metaImage.data.attributes.url;
 useHead({
