@@ -44,5 +44,5 @@ var homeData = {
 };
 
 const { pending, data } = await useLazyFetch("/api/pages/home");
-homeData = data.value.data.attributes;
+homeData = data.value?.data.attributes;
 </script>

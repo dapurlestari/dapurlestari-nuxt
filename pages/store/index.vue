@@ -73,22 +73,43 @@ var banners = [
   },
 ];
 
-const { $myConfig } = useNuxtApp();
 const config = useRuntimeConfig();
 const baseURL = config.public.baseURL;
+const url = "https://dapurlestari.id/store";
 
 const { data: page } = await useFetch("/api/pages/product");
 const productPage = page.value.data.attributes;
 banners = productPage.ads_banners;
+const image = baseURL + productPage.seo.metaImage.data.attributes.url;
 // console.log(banners);
 
 const { data: response } = await useFetch("/api/products/get");
 const products = response.value.data;
 useHead({
-  title: $myConfig.seo.metaTitle,
+  title: productPage.seo.metaTitle,
   meta: [
-    { name: "description", content: $myConfig.seo.metaDescription },
-    { name: "keywords", content: $myConfig.seo.keywords },
+    { name: "title", content: productPage.seo.metaTitle },
+    { name: "description", content: productPage.seo.metaDescription },
+    { name: "keywords", content: productPage.seo.keywords },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: url },
+    { property: "og:title", content: productPage.seo.metaTitle },
+    { property: "og:description", content: productPage.seo.metaDescription },
+    {
+      property: "og:image",
+      content: image,
+    },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:url", content: url },
+    {
+      name: "twitter:title",
+      content: productPage.seo.metaTitle,
+    },
+    { name: "twitter:description", content: productPage.seo.metaDescription },
+    {
+      name: "twitter:image",
+      content: image,
+    },
   ],
   link: [
     {

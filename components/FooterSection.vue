@@ -3,9 +3,10 @@
     <footer
       class="footer footer-center p-10 bg-gray-100 text-base-content rounded">
       <div class="grid grid-flow-col gap-4">
-        <NuxtLink to="/privacy-policy" class="link link-hover">
-          Privacy Policy
+        <NuxtLink to="/terms-services" class="link link-hover">
+          Terms and Services
         </NuxtLink>
+        <NuxtLink to="/faq" class="link link-hover"> FAQ </NuxtLink>
         <NuxtLink to="/terms-services" class="link link-hover">
           Terms and Services
         </NuxtLink>

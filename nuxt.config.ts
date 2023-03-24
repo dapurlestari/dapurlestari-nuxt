@@ -1,3 +1,4 @@
+const fbAppID = "155272500410320";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "nuxt-swiper"],
@@ -80,7 +81,6 @@ export default defineNuxtConfig({
           "http-equiv": "Cache-Control",
           content: "max-age=86400, must-revalidate",
         },
-        { name: "description", content: "Dapur Lestari cookies" },
       ],
       link: [
         {
@@ -112,6 +112,7 @@ export default defineNuxtConfig({
       apiBase: process.env.NUXT_PUBLIC_API_BASE,
       mapAPIKey: process.env.NUXT_MAP_API_KEY,
       GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+      fbAppID: fbAppID,
     },
   },
 });

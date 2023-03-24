@@ -138,12 +138,35 @@ const product = data.value.data;
 const seo = product.attributes.seo;
 const images = product.attributes.images.data;
 const waMe = `https://wa.me/${$myConfig.phone}/?text=Halo kak. mau pesen ${product.attributes.name} nya dong! 😊`;
+const url = `https://dapurlestari.id/${product.attributes.slug}`;
+const firstImageURL = `${baseURL}${images[0].attributes.url}`;
 
 useHead({
-  title: seo.metaTitle,
+  title: seo.metaTitle ?? product.attributes.name,
   meta: [
+    { name: "title", content: seo.metaTitle ?? product.attributes.name },
     { name: "description", content: seo.metaDescription },
     { name: "keywords", content: seo.keywords },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: url },
+    { property: "og:title", content: seo.metaTitle ?? product.attributes.name },
+    { property: "og:description", content: seo.metaDescription },
+    {
+      property: "og:image",
+      content: firstImageURL,
+    },
+    // { property: "fb:app_id", content: config.public.fbAppID },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:url", content: url },
+    {
+      name: "twitter:title",
+      content: seo.metaTitle ?? product.attributes.name,
+    },
+    { name: "twitter:description", content: seo.metaDescription },
+    {
+      name: "twitter:image",
+      content: firstImageURL,
+    },
   ],
   link: [
     {
