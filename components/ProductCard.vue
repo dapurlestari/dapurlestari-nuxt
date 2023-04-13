@@ -34,6 +34,5 @@ const config = useRuntimeConfig();
 const { product } = defineProps(["product"]);
 let productAttr = product.attributes;
 const firstImage = productAttr.images.data[0].attributes;
-const imageURL =
-  config.public.baseURL + (firstImage.formats.medium ?? firstImage).url;
+const imageURL = config.public.baseURL + firstImage.url;
 </script>
