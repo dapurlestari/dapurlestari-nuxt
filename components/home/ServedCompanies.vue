@@ -10,18 +10,23 @@
         </p>
         <article
           id="company-logo"
-          :class="`grid grid-flow-row grid-cols-${
-            servedCompanies.companies.length % 2 == 0 ? 2 : 1
-          } md:grid-cols-${
-            servedCompanies.companies.length % 4 == 0 ? 4 : 1
-          } gap-4 mx-auto px-4 pt-8`">
+          class="flex flex-row flex-wrap justify-center max-w-7xl gap-4 mx-auto px-4 pt-8">
           <div
-            v-for="item in servedCompanies.companies"
-            class="p-2 w-full rounded-xl">
-            <img
-              :src="baseURL + item.logo.data.attributes.url"
-              :alt="item.name"
-              class="max-h-24 mx-auto" />
+            v-for="item in [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+            :key="item"
+            class="p-2 rounded-xl">
+            <a :href="servedCompanies.companies[0].link ?? ''" target="_blank">
+              <img
+                :src="
+                  baseURL +
+                  servedCompanies.companies[0].logo.data.attributes.url
+                "
+                :alt="servedCompanies.companies[0].name"
+                width="158"
+                height="48"
+                class="max-h-24 mx-auto object-contain" />
+            </a>
+            <span>{{ servedCompanies.companies[0].description }}</span>
           </div>
         </article>
       </div>
