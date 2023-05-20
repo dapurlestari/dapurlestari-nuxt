@@ -23,6 +23,11 @@ const navMenu = [
     route: "/store",
   },
   {
+    title: "Blog",
+    icon: "lni lni-book",
+    route: "/blog",
+  },
+  {
     title: "About",
     icon: "lni lni-question-circle",
     route: "/about",
