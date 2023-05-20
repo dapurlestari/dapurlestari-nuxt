@@ -1,9 +1,12 @@
 <template>
-  <article class="bg-base-200">
+  <article class="bg-white">
     <div class="max-w-screen-lg mx-auto pt-20 pb-8">
       <div class="mb-4 md:mb-0 w-full lg:w-3/4 mx-auto relative">
-        <div class="px-4 lg:px-0">
-          <h2 class="text-4xl font-semibold">{{ post.attributes.title }}</h2>
+        <div class="px-4 lg:px-0 mb-10 md:my-10">
+          <h2 class="text-4xl font-semibold text-gray-900">
+            {{ post.attributes.title }}
+          </h2>
+          <p class="mt-2">{{ $formatDate(post.attributes.createdAt) }}</p>
         </div>
 
         <!-- The button to open modal -->
@@ -11,7 +14,7 @@
           <img
             :src="firstImageURL"
             :title="post.attributes.title"
-            class="w-full h-72 lg:h-96 mt-3 mx-5 md:mx-0 object-cover lg:rounded-lg cursor-pointer" />
+            class="md:w-full h-72 lg:h-96 mt-3 mx-5 md:mx-0 object-cover lg:rounded-lg cursor-pointer" />
         </label>
         <!-- <ShareButtons :title="post.data.title.iv" /> -->
         <div class="divider px-4 lg:px-0"></div>
@@ -30,7 +33,7 @@
         </label>
         <article
           v-if="post.attributes.content"
-          class="prose lg:prose-xl mx-5 md:mx-0">
+          class="prose lg:prose-xl mx-5 md:mx-0 text-gray-800 prose-p:text-gray-900 prose-headings:text-gray-900 prose-li:text-gray-900 prose-strong:text-gray-800">
           <div v-html="$mdit.render(post.attributes.content)" class=""></div>
         </article>
       </div>
