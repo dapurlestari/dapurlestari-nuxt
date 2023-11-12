@@ -15,8 +15,8 @@
     <HomeNewProducts v-else :new-products="homeData.new_products" />
 
     <!-- marquee by https://jackwhiting.co.uk/posts/creating-a-marquee-with-tailwind/ -->
-    <div v-if="pending" class=""></div>
-    <HomeServedCompanies v-else :served-companies="homeData.served_companies" />
+    <!-- <div v-if="pending" class=""></div>
+    <HomeServedCompanies v-else :served-companies="homeData.served_companies" /> -->
 
     <div v-if="pending" class=""></div>
     <ContactSection v-else />
