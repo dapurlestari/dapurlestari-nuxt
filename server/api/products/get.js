@@ -4,9 +4,9 @@ export default defineEventHandler(async (event) => {
     headers: {
       Authorization: `Bearer ${config.apiSecret}`,
     },
-    /* query: {
+    query: {
       "filters[active][$eq]": true,
       populate: "*",
-    }, */
+    },
   });
 });

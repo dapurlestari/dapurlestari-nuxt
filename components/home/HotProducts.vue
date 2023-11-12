@@ -9,9 +9,10 @@
       </p>
 
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-5 mt-10 mx-0 md:mx-20">
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 md:gap-5 mt-10 mx-0 md:mx-20">
         <ProductCard
-          v-for="product in hotProducts.products.data"
+          v-for="(product, index) in hotProducts.products.data"
+          :key="index"
           :product="product" />
       </div>
     </div>

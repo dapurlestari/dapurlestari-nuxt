@@ -1,12 +1,11 @@
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
-  return $fetch(`${config.public.apiBase}/blogs/`, {
+  return $fetch(`${config.public.apiBase}/blog-page`, {
+    query: {
+      populate: "deep",
+    },
     headers: {
       Authorization: `Bearer ${config.apiSecret}`,
-    },
-    query: {
-      // "filters[active][$eq]": true,
-      populate: "featuredImage",
     },
   });
 });

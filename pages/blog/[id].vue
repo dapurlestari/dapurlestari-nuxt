@@ -1,38 +1,43 @@
 <template>
-  <article class="bg-base-200">
+  <article class="bg-white">
     <div class="max-w-screen-lg mx-auto pt-20 pb-8">
-      <div class="mb-4 md:mb-0 w-full lg:w-3/4 mx-auto relative">
-        <div class="px-4 lg:px-0">
-          <h2 class="text-4xl font-semibold">{{ post.attributes.title }}</h2>
+      <div class="px-4 lg:px-0 mb-10 md:my-10 w-full lg:w-3/4 mx-auto relative">
+        <div class="flex flex-col space-y-1.5 items-start justify-start">
+          <p class="text-4xl font-semibold text-gray-900">
+            {{ post.attributes.title }}
+          </p>
+          <p class="text-xs">{{ $formatDate(post.attributes.createdAt) }}</p>
         </div>
+        <div class="flex flex-col items-start justify-start w-full my-8">
+          <label :for="`modal-${post.id}`" class="w-full h-72 lg:h-96">
+            <img
+              :src="firstImageURL"
+              :title="post.attributes.title"
+              class="w-full h-full flex-1 bg-gray-300 shadow rounded object-cover lg:rounded-lg cursor-pointer" />
+          </label>
 
-        <!-- The button to open modal -->
-        <label :for="`modal-${post.id}`" class="">
-          <img
-            :src="firstImageURL"
-            :title="post.attributes.title"
-            class="w-full h-72 lg:h-96 mt-3 mx-5 md:mx-0 object-cover lg:rounded-lg cursor-pointer" />
-        </label>
-        <!-- <ShareButtons :title="post.data.title.iv" /> -->
-        <div class="divider px-4 lg:px-0"></div>
-
-        <!-- Put this part before </body> tag -->
-        <input type="checkbox" :id="`modal-${post.id}`" class="modal-toggle" />
-        <label :for="`modal-${post.id}`" class="modal cursor-pointer">
-          <div class="modal-box max-w-5xl relative">
-            <label
-              :for="`modal-${post.id}`"
-              class="btn btn-sm btn-circle absolute right-2 top-2 text-xs">
-              ✕
-            </label>
-            <img :src="firstImageURL" class="w-full" />
-          </div>
-        </label>
-        <article
-          v-if="post.attributes.content"
-          class="prose lg:prose-xl mx-5 md:mx-0">
-          <div v-html="$mdit.render(post.attributes.content)" class=""></div>
-        </article>
+          <input
+            type="checkbox"
+            :id="`modal-${post.id}`"
+            class="modal-toggle" />
+          <label :for="`modal-${post.id}`" class="modal cursor-pointer">
+            <div class="modal-box max-w-5xl relative">
+              <label
+                :for="`modal-${post.id}`"
+                class="btn btn-sm btn-circle absolute right-2 top-2 text-xs">
+                ✕
+              </label>
+              <img :src="firstImageURL" class="w-full" />
+            </div>
+          </label>
+        </div>
+        <div class="flex flex-col items-start justify-start">
+          <article
+            v-if="post.attributes.content"
+            class="prose lg:prose-xl text-gray-800 prose-p:text-gray-900 prose-headings:text-gray-900 prose-li:text-gray-900 prose-strong:text-gray-800">
+            <div v-html="$mdit.render(post.attributes.content)" class=""></div>
+          </article>
+        </div>
       </div>
     </div>
   </article>
